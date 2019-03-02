@@ -1,8 +1,8 @@
 #include <FirebaseArduino.h> 
-#include <ESP8266WiFi.h>             //wifi library
+#include <ESP8266WiFi.h>                //wifi library
 #define WIFI_SSID "Soiyeah"             //replace SSID with your wifi username
-#define WIFI_PASSWORD "2657091123"          //replace PWD with your wifi password
-#define WIFI_LED D5                  //connect a led to any of the gpio pins of the board and replace pin_number with it eg. D4                      
+#define WIFI_PASSWORD "2657091123"      //replace PWD with your wifi password
+#define WIFI_LED D5                     //connect a led to any of the gpio pins of the board and replace pin_number with it eg. D4                      
 #define SWITCH1 D1
 #define SWITCH2 D2
 #define SWITCH3 D3
@@ -13,13 +13,13 @@
 
 void setup() {
   Serial.begin(9600);
-  pinMode(WIFI_LED,OUTPUT);                         //define pinmodes
-  pinMode(SWITCH1,OUTPUT);                         //switch1
-  pinMode(SWITCH2,OUTPUT);                         //switch2
-  pinMode(SWITCH3,OUTPUT);                         //switch3
-  pinMode(SWITCH4,OUTPUT);                         //switch4  
+  pinMode(WIFI_LED,OUTPUT);             //define pinmodes
+  pinMode(SWITCH1,OUTPUT);              //switch1
+  pinMode(SWITCH2,OUTPUT);              //switch2
+  pinMode(SWITCH3,OUTPUT);              //switch3
+  pinMode(SWITCH4,OUTPUT);              //switch4  
 
-  digitalWrite(SWITCH1, HIGH);                    // to keep the switches off in case of a powercut
+  digitalWrite(SWITCH1, HIGH);          // to keep the switches off in case of a powercut
   digitalWrite(SWITCH2, HIGH);
   
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);  
@@ -37,7 +37,7 @@ void setup() {
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
 
-  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);             //connect to Database
+  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);      //connect to Database
   Firebase.stream("/devices");  
   delay(1000);
 
