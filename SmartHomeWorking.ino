@@ -9,7 +9,7 @@
 #define SWITCH4 D4
 
 #define FIREBASE_HOST "smart-home-f7bee.firebaseio.com"           //link of api
-#define FIREBASE_AUTH "gVR1Lr2rLhySQ9W76pFmCRMIPxlU1rWclpqUbLPi"           //database secret
+#define FIREBASE_AUTH "gVR1Lr2rLhySQ9W76pFmCRMIPxlU1rWclpqUbLPi"  //database secret
 
 void setup() {
   Serial.begin(9600);
@@ -21,7 +21,6 @@ void setup() {
 
   digitalWrite(SWITCH1, HIGH);                    // to keep the switches off in case of a powercut
   digitalWrite(SWITCH2, HIGH);
-
   
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);  
   //connect to wifi
@@ -34,7 +33,7 @@ void setup() {
     
   Serial.println("");
   Serial.println("WiFi connected");
-  digitalWrite(WIFI_LED,LOW);   //------------Connected led--------------------------//
+  digitalWrite(WIFI_LED,LOW);   //------------Connected led------------//
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
 
